@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "62453097678",
+    "project_id": "ifridgev2-922ce",
+    "storage_bucket": "ifridgev2-922ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62453097678:android:040cc4a7be31af73891c9f",
+        "android_client_info": {
+          "package_name": "com.example.ifridgev2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62453097678-32kaglijt7koj9re3cdtp24pd027bf69.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ifridgev2",
+            "certificate_hash": "09f8e1df6accbc427c5182928c366e7046a67013"
+          }
+        },
+        {
+          "client_id": "62453097678-k7l8sqpsul67h6vkrjmmhp58927f2bu8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc9i73rFdiyDPMCrawbeHzP3JDcIF-P6M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62453097678-k7l8sqpsul67h6vkrjmmhp58927f2bu8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

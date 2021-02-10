@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:ifridgev2/UI/navbar.dart';
+import 'package:ifridgev2/UI/widgets/logged_in.dart';
 import 'package:ifridgev2/UI/widgets/sign_up_widget.dart';
 import 'package:ifridgev2/repository/google_sign_in.dart';
 import 'package:provider/provider.dart';
@@ -19,7 +20,7 @@ class Login extends StatelessWidget {
                   if (provider.isSigningIn) {
                     return buildLoading();
                   } else if (snapshot.hasData) {
-                    return SignUpWidget();
+                    return LoggedInWidget();
                   } else {
                     return SignUpWidget();
                   }

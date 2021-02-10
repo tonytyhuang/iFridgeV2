@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "62453097678-32kaglijt7koj9re3cdtp24pd027bf69.apps.googleusercontent.com",
+          "client_id": "62453097678-btdlb8ub7qkdt8h8s2hskrv13o0fnime.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.ifridgev2",
-            "certificate_hash": "09f8e1df6accbc427c5182928c366e7046a67013"
+            "certificate_hash": "405cd8804abc38d801f6a4246a27973cd52b7142"
           }
         },
         {

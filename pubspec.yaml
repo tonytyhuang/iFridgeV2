@@ -35,6 +35,9 @@ dependencies:
   google_sign_in: ^4.5.9
   provider: ^4.3.3
   cloud_firestore: ^0.16.0
+  firebase_core: ^0.7.0
+  firebase_analytics: ^7.0.1
+  rxdart: 0.20.0
   # Google icon for sign in
   font_awesome_flutter: ^8.11.0
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ifridgev2/UI/homescreen.dart';
+import 'package:ifridgev2/UI/widgets/logged_in.dart';
 
 class NavBar extends StatefulWidget {
   @override
@@ -9,7 +10,7 @@ class NavBar extends StatefulWidget {
 class NavBarState extends State<NavBar> {
   int currIndex = 0;
   final tabs = [
-    Center(child: Text('Home')),
+    HomeScreen(),
     Center(child: Text('Cart')),
     Center(child: Text('Add')),
     Center(child: Text('Recipes')),

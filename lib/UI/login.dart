@@ -20,7 +20,7 @@ class Login extends StatelessWidget {
                   if (provider.isSigningIn) {
                     return buildLoading();
                   } else if (snapshot.hasData) {
-                    return LoggedInWidget();
+                    return NavBar();
                   } else {
                     return SignUpWidget();
                   }

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ifridgev2/UI/homescreen.dart';
-import 'package:ifridgev2/UI/login.dart';
-import 'package:ifridgev2/UI/navbar.dart';
+import 'package:ifridgev2/UI/screens/login.dart';
 import 'package:ifridgev2/injection.dart';
 import 'package:firebase_core/firebase_core.dart';
 

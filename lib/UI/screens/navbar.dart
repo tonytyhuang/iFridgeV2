@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ifridgev2/UI/homescreen.dart';
-import 'package:ifridgev2/UI/widgets/logged_in.dart';
+import 'package:ifridgev2/UI/screens/homescreen.dart';
 
 class NavBar extends StatefulWidget {
   @override

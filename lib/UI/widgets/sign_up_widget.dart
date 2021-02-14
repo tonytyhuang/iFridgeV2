@@ -6,23 +6,30 @@ class SignUpWidget extends StatelessWidget {
   Widget build(BuildContext context) => buildSignUp();
 
   Widget buildSignUp() => Scaffold(
+        backgroundColor: Color(0xFF1f213f),
         body: Padding(
           padding: EdgeInsets.only(left: 20, top: 50, right: 20),
           child: Column(
             children: [
+              SizedBox(
+                height: 220,
+              ),
               Align(
                 alignment: Alignment.topCenter,
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20),
-                  width: 80,
+                  margin: EdgeInsets.symmetric(horizontal: 0),
                   child: Text(
                     'iFridge',
-                    style: TextStyle(color: Colors.black, fontSize: 20),
+                    style: TextStyle(
+                        fontFamily: 'Pacifico',
+                        color: Colors.white,
+                        fontSize: 50,
+                        fontStyle: FontStyle.italic),
                   ),
                 ),
               ),
               SizedBox(
-                height: 450,
+                height: 20,
               ),
               GoogleSignupButton(),
             ],

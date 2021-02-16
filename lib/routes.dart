@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ifridgev2/UI/screens/FoodList.dart';
+import 'package:ifridgev2/UI/FoodList/FoodList.dart';
 import 'package:ifridgev2/UI/screens/login.dart';
 
 class RouteGenerator {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ifridgev2/UI/screens/homescreen.dart';
+import 'package:ifridgev2/UI/screens/profile.dart';
 
 class NavBar extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class NavBarState extends State<NavBar> {
     Center(child: Text('Cart')),
     Center(child: Text('Add')),
     Center(child: Text('Recipes')),
-    Center(child: Text('Profile')),
+    Profile(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -22,9 +23,9 @@ class NavBarState extends State<NavBar> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currIndex,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Color(0xFF80adce),
-        selectedItemColor: Color(0xFFeed5d1),
-        unselectedItemColor: Colors.white,
+        backgroundColor: Color(0xFF1c2754),
+        selectedItemColor: Color(0xFF3658d8),
+        unselectedItemColor: Color(0xFF7d839e),
         iconSize: 30,
         selectedFontSize: 11,
         unselectedFontSize: 10,

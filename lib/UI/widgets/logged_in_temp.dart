@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ifridgev2/UI/screens/profile.dart';
 
 class LoggedInWidgetTemp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Color(0xFF1f213f),
       body: Container(
@@ -14,7 +17,7 @@ class LoggedInWidgetTemp extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.only(left: 20, top: 40, right: 25),
+          padding: EdgeInsets.only(left: 10, top: 30, right: 10),
           child: Column(
             children: [
               // Top row with welcome and picture of logged in user
@@ -23,7 +26,7 @@ class LoggedInWidgetTemp extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: 5, left: 70),
+                    padding: EdgeInsets.only(top: 15, left: 70),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -50,15 +53,101 @@ class LoggedInWidgetTemp extends StatelessWidget {
                       ],
                     ),
                   ),
-                  CircleAvatar(
-                    radius: 20,
-                    backgroundColor: Colors.white,
-                    child: CircleAvatar(
-                      radius: 18,
-                      backgroundImage: AssetImage('assets/images/0.jpg'),
+                  Padding(
+                    padding: EdgeInsets.only(top: 10, right: 10),
+                    child: InkWell(
+                      onTap: () {
+                        Profile();
+                      },
+                      child: CircleAvatar(
+                        radius: 20,
+                        backgroundColor: Colors.white,
+                        child: CircleAvatar(
+                          radius: 18,
+                          backgroundImage: AssetImage('assets/images/0.jpg'),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 5, right: 5, top: 15),
+                child: Container(
+                  width: width,
+                  height: 220.0,
+                  color: Colors.transparent,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Color(0xFF233168),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding:
+                              EdgeInsets.only(left: 30, right: 30, top: 30),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Expiring Soon',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18),
+                              ),
+                              Text(
+                                'All Items >',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 13),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 5, right: 5, top: 15),
+                child: Container(
+                  width: width,
+                  height: 240.0,
+                  color: Colors.transparent,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Color(0xFF233168),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding:
+                              EdgeInsets.only(left: 30, right: 30, top: 30),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Recipes To Use',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18),
+                              ),
+                              Text(
+                                'All Recipes >',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 13),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ifridgev2/UI/screens/login.dart';
+import 'package:ifridgev2/UI/screens/navbar.dart';
 import 'package:ifridgev2/injection.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Login(),
+        home: NavBar(),
         routes: {
           //'loginScreen': (content) => LoginScreen(),
         });

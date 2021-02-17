@@ -5,9 +5,11 @@ class Food {
   final String name;
   final int quantity;
   final Timestamp expiryDate;
+  final String category;
 
   Food(
       {@required this.name,
       @required this.quantity,
-      @required this.expiryDate});
+      @required this.expiryDate,
+      @required this.category});
 }

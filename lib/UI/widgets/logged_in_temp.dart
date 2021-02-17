@@ -116,7 +116,7 @@ class LoggedInWidgetTemp extends StatelessWidget {
                 ),
                 Padding(
                   padding:
-                      EdgeInsets.only(left: 5, right: 5, top: 15, bottom: 20),
+                      EdgeInsets.only(left: 5, right: 5, top: 0, bottom: 20),
                   child: Container(
                     width: width,
                     height: 350.0,

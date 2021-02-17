@@ -13,3 +13,12 @@ class GetInitialFood extends FoodEvent {
   @override
   List<Object> get props => [limit];
 }
+
+class AddFood extends FoodEvent {
+  final Food food;
+
+  AddFood(this.food);
+
+  @override
+  List<Object> get props => [food];
+}

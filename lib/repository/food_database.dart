@@ -5,6 +5,8 @@ abstract class IFoodDatabase {
   Future<void> test();
 
   Future<List<Food>> getFoodList({String userId});
+
+  Future<String> addFood({Food food});
 }
 
 class FoodDatabaseService implements IFoodDatabase {
@@ -24,5 +26,22 @@ class FoodDatabaseService implements IFoodDatabase {
     } catch (e) {
       print(e);
     }
+  }
+
+  @override
+  Future<String> addFood({Food food}) async {
+    String fakeId = "Tonydoodoo";
+    try {
+      DocumentReference documentReference = await foodCollection.add({
+        "user_id": fakeId,
+        "name": food.name,
+        "quantity": food.quantity,
+        "expiry": food.expiryDate,
+      });
+      return documentReference.id;
+    } catch (e) {
+      print(e);
+    }
+    return '';
   }
 }

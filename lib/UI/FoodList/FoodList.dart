@@ -38,7 +38,8 @@ class FoodListPageChild extends StatelessWidget {
                 Food food = Food(
                     name: 'Tony',
                     quantity: 1,
-                    expiryDate: Timestamp.fromDate(DateTime.now()));
+                    expiryDate: Timestamp.fromDate(DateTime.now()),
+                    category: 'Emergency Food');
                 BlocProvider.of<FoodBloc>(context)..add(AddFood(food));
               },
               child: Text('Test'))

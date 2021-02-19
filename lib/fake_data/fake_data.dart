@@ -7,7 +7,8 @@ List<Food> getFoodList() {
     Food value = Food(
         name: 'Chicken',
         quantity: 3,
-        expiryDate: Timestamp.fromDate(DateTime.now()));
+        expiryDate: Timestamp.fromDate(DateTime.now()),
+        category: 'Meat');
     list.add(value);
   }
   return list;

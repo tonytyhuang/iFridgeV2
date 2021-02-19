@@ -37,6 +37,7 @@ class FoodDatabaseService implements IFoodDatabase {
         "name": food.name,
         "quantity": food.quantity,
         "expiry": food.expiryDate,
+        "category": food.category,
       });
       return documentReference.id;
     } catch (e) {

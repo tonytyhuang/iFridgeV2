@@ -20,12 +20,26 @@ class FoodDatabaseService implements IFoodDatabase {
 
   @override
   Future<List<Food>> getFoodList({String userId, int limit}) async {
-    DocumentSnapshot documentSnapshot;
+    List<Food> foodList;
     try {
-      documentSnapshot = await foodCollection.doc(userId).get();
+      QuerySnapshot querySnapshot =
+          await foodCollection.where("user_id", isEqualTo: userId).get();
+      if (querySnapshot.docs.length > 0) {
+        for (QueryDocumentSnapshot doc in querySnapshot.docs) {
+          Map<String, dynamic> json = doc.data();
+          final Food food = Food(
+              name: json['name'],
+              quantity: json['quantity'],
+              expiryDate: json['expiry'],
+              category: json['category']);
+          foodList.add(food);
+        }
+      }
+      return foodList;
     } catch (e) {
       print(e);
     }
+    return null;
   }
 
   @override

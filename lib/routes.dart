@@ -8,7 +8,7 @@ class RouteGenerator {
     final args = settings.arguments;
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => Login());
+        return MaterialPageRoute(builder: (_) => NavBar());
       case '/test':
         return MaterialPageRoute(builder: (_) => FoodListPage());
     }

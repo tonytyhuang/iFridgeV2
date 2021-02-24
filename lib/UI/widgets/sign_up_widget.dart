@@ -35,7 +35,13 @@ class SignUpWidget extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pushNamed('/test');
                 },
-                child: Text('test'))
+                child: Text('test')),
+            FlatButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/home');
+              },
+              child: Text('Home'),
+            )
           ],
         ),
       ),

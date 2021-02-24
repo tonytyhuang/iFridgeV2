@@ -3,7 +3,7 @@ import 'package:ifridgev2/entities/food_entity.dart';
 
 List<Food> getFoodList() {
   List<Food> list = new List();
-  for (int i = 0; i < 5; i++) {
+  for (int i = 0; i < 15; i++) {
     Food value = Food(
         name: 'Chicken',
         quantity: 3,

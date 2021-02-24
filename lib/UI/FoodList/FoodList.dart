@@ -7,7 +7,6 @@ import 'package:ifridgev2/UI/FoodList/widgets/AllFoodListWidget.dart';
 import 'package:ifridgev2/bloc/food/food_bloc.dart';
 import 'package:ifridgev2/entities/food_entity.dart';
 import 'package:ifridgev2/fake_data/fake_data.dart';
-import 'package:ifridgev2/injection.dart';
 import 'package:ifridgev2/repository/food_database.dart';
 
 class FoodListPage extends StatelessWidget {

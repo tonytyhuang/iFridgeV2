@@ -12,22 +12,25 @@ class FoodListWidget extends StatelessWidget {
         alignment: Alignment.topCenter,
         width: MediaQuery.of(context).size.width,
         margin: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(32)),
           // BorderRadius.only(
           //     topLeft: Radius.circular(32),
           //     topRight: Radius.circular(32)),
-          color: Colors.white,
+          color: Color(0xFF233168),
         ),
-        child: MediaQuery.removePadding(
-          removeTop: true,
-          context: context,
-          child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: foodList.length,
-              itemBuilder: (BuildContext context, int index) =>
-                  FoodCardWidget(foodList[index])),
-        ),
+        child: Stack(children: [
+          MediaQuery.removePadding(
+            removeTop: true,
+            context: context,
+            child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: foodList.length,
+                itemBuilder: (BuildContext context, int index) =>
+                    FoodCardWidget(foodList[index])),
+          ),
+        ]),
       ),
     );
   }

@@ -10,6 +10,7 @@ class LoggedInWidgetTemp extends StatelessWidget {
       backgroundColor: Color(0xFF1f213f),
       body: SingleChildScrollView(
         child: Container(
+          // Background for the home page
           decoration: BoxDecoration(
             image: DecorationImage(
               alignment: Alignment.topCenter,
@@ -18,7 +19,9 @@ class LoggedInWidgetTemp extends StatelessWidget {
             ),
           ),
           child: Padding(
+            // Padding for the main page
             padding: EdgeInsets.only(left: 10, top: 30, right: 10),
+            // Column represents entire page as column
             child: Column(
               children: [
                 // Top row with welcome and picture of logged in user
@@ -75,6 +78,7 @@ class LoggedInWidgetTemp extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
+                // Expiring Soon Container
                 Padding(
                   padding: EdgeInsets.only(left: 5, right: 5, top: 15),
                   child: Container(
@@ -85,6 +89,7 @@ class LoggedInWidgetTemp extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Color(0xFF233168),
                           borderRadius: BorderRadius.circular(20)),
+                      // Column of data inside the container
                       child: Column(
                         children: [
                           Padding(
@@ -106,6 +111,22 @@ class LoggedInWidgetTemp extends StatelessWidget {
                               ],
                             ),
                           ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Container(
+                            width: 100,
+                            height: 120,
+                            // color: Colors.transparent,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    colors: [
+                                  Color(0xFF344899),
+                                  Color(0xFF233168)
+                                ])),
+                          ),
                         ],
                       ),
                     ),
@@ -114,6 +135,7 @@ class LoggedInWidgetTemp extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
+                // Recipes Container
                 Padding(
                   padding:
                       EdgeInsets.only(left: 5, right: 5, top: 0, bottom: 20),

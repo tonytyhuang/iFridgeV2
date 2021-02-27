@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ifridgev2/UI/AddFoodPage/add_food_page.dart';
 import 'package:ifridgev2/UI/screens/homescreen.dart';
 import 'package:ifridgev2/UI/screens/profile.dart';
 
@@ -12,7 +13,7 @@ class NavBarState extends State<NavBar> {
   final tabs = [
     HomeScreen(),
     Center(child: Text('Cart')),
-    Center(child: Text('Add')),
+    AddFoodPage(),
     Center(child: Text('Recipes')),
     Profile(),
   ];

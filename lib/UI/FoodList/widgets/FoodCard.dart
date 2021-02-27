@@ -46,7 +46,7 @@ class FoodCardWidget extends StatelessWidget {
 }
 
 Widget foodIcon(String category) {
-  if (category == 'Emergency Food') {
+  if (category != null) {
     return Container(
       child: Icon(
         Icons.food_bank,

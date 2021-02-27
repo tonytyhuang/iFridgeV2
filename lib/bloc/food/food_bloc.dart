@@ -30,7 +30,9 @@ Stream<FoodState> _mapAddFoodEventToState(AddFood event, FoodState state,
   try {
     await addFood(food: event.food);
     List<Food> foodList = state.foodList;
-    foodList.add(event.food);
+    if (foodList != null) {
+      foodList.add(event.food);
+    }
     yield state.copyWith(foodList: foodList);
   } catch (e) {
     print(e);

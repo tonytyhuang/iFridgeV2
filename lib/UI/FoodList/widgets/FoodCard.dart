@@ -24,23 +24,21 @@ class FoodCardWidget extends StatelessWidget {
       ),
       child: Row(
         children: [
-          foodIcon(food.category),
+          Container(child: foodIcon(food.category)),
           SizedBox(width: 40),
-          Text(food.name),
-
+          Container(child: Text(food.name)),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(food.quantity.toString()),
+                  //Text(food.quantity.toString()),
+                  Container(child: Text('hi')),
                 ],
               ),
             ),
           ),
-          // SizedBox(width: 20),
-          // Text(food.expiryDate.toString()),
         ],
       ),
     );
@@ -48,7 +46,7 @@ class FoodCardWidget extends StatelessWidget {
 }
 
 Widget foodIcon(String category) {
-  if (category == 'Meat') {
+  if (category == 'Emergency Food') {
     return Container(
       child: Icon(
         Icons.food_bank,

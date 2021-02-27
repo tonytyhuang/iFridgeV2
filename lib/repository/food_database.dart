@@ -4,7 +4,7 @@ import 'package:ifridgev2/entities/food_entity.dart';
 abstract class IFoodDatabase {
   Future<void> test();
 
-  Future<List<Food>> getFoodList({String userId});
+  Future<List<Food>> getFoodList({int limit});
 
   Future<String> addFood({Food food});
 }
@@ -19,11 +19,12 @@ class FoodDatabaseService implements IFoodDatabase {
   }
 
   @override
-  Future<List<Food>> getFoodList({String userId, int limit}) async {
-    List<Food> foodList;
+  Future<List<Food>> getFoodList({int limit}) async {
+    String fakeId = "Tonydoodoo";
+    List<Food> foodList = new List();
     try {
       QuerySnapshot querySnapshot =
-          await foodCollection.where("user_id", isEqualTo: userId).get();
+          await foodCollection.where("user_id", isEqualTo: fakeId).get();
       if (querySnapshot.docs.length > 0) {
         for (QueryDocumentSnapshot doc in querySnapshot.docs) {
           Map<String, dynamic> json = doc.data();
@@ -34,12 +35,14 @@ class FoodDatabaseService implements IFoodDatabase {
               category: json['category']);
           foodList.add(food);
         }
+      } else {
+        return foodList;
       }
       return foodList;
     } catch (e) {
       print(e);
     }
-    return null;
+    return foodList;
   }
 
   @override

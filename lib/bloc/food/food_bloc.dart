@@ -11,26 +11,39 @@ part 'food_state.dart';
 
 class FoodBloc extends Bloc<FoodEvent, FoodState> {
   final IFoodDatabase ifoodDatabase;
-  FoodBloc(this.ifoodDatabase) : super(FoodInitial());
+  FoodBloc(this.ifoodDatabase) : super(FoodState.initial());
 
   @override
   Stream<FoodState> mapEventToState(
     FoodEvent event,
   ) async* {
     if (event is AddFood) {
-      yield* _mapFoodAddedEventToState(event, ifoodDatabase.addFood);
+      yield* _mapAddFoodEventToState(event, state, ifoodDatabase.addFood);
+    } else if (event is LoadFood) {
+      yield* _mapLoadFoodEventToState(event, state, ifoodDatabase.getFoodList);
     }
   }
 }
 
-Stream<FoodState> _mapFoodAddedEventToState(
-    AddFood event, Future<String> Function({Food food}) addFood) async* {
+Stream<FoodState> _mapAddFoodEventToState(AddFood event, FoodState state,
+    Future<String> Function({Food food}) addFood) async* {
   try {
-    print('works');
-    String id = await addFood(food: event.food);
-    yield FoodAdded(id);
+    await addFood(food: event.food);
+    List<Food> foodList = state.foodList;
+    foodList.add(event.food);
+    yield state.copyWith(foodList: foodList);
   } catch (e) {
     print(e);
-    yield FoodError(e);
+    yield state.copyWith(error: e);
+  }
+}
+
+Stream<FoodState> _mapLoadFoodEventToState(LoadFood event, FoodState state,
+    Future<List<Food>> Function({int limit}) getFoodList) async* {
+  try {
+    List<Food> foodList = await getFoodList(limit: event.limit);
+    yield state.copyWith(foodList: foodList);
+  } catch (e) {
+    print(e);
   }
 }

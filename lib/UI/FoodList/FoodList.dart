@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +12,8 @@ class FoodListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(providers: [
       BlocProvider<FoodBloc>(
-          create: (context) => FoodBloc(FoodDatabaseService()))
+          create: (context) =>
+              FoodBloc(FoodDatabaseService())..add(LoadFood(10)))
     ], child: FoodListPageChild());
   }
 }
@@ -29,9 +28,7 @@ class FoodListPageChild extends StatelessWidget {
           SizedBox(
             height: 128,
           ),
-          FoodListWidget(
-            foodList: getFoodList(),
-          ),
+          FoodListWidget(),
           FlatButton(
               onPressed: () {
                 Food food = Food(

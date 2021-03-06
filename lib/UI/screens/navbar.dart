@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ifridgev2/UI/AddFoodPage/add_food_page.dart';
+//import 'package:ifridgev2/UI/AddFoodPage/add_food_page.dart';
+import 'package:ifridgev2/UI/screens/AddFoodPage/AddFoodPage.dart';
 import 'package:ifridgev2/UI/screens/homescreen.dart';
 import 'package:ifridgev2/UI/screens/profile.dart';
 

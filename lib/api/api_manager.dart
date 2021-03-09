@@ -5,7 +5,7 @@ import 'package:ifridgev2/api/api_model.dart';
 import 'package:ifridgev2/api/api_urls.dart';
 
 class ApiManager {
-  Future<ApiModel> getIngredients() async {
+  Future<List<ApiModel>> getIngredients() async {
     var client = http.Client();
     var recipesModel;
 
@@ -14,9 +14,8 @@ class ApiManager {
 
     final response = await http.get(Url.url);
     if (response.statusCode == 200) {
-      // var jsonBody = response.body;
-      // var jsonMap = json.decode(jsonBody);
-      recipesModel = ApiModel.fromJson(jsonDecode(response.body)[0]);
+      var jsonBody = response.body;
+      recipesModel = apiModelFromJson(jsonBody);
     } else {
       return recipesModel;
     }

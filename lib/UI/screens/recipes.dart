@@ -9,7 +9,7 @@ class Recipes extends StatefulWidget {
 }
 
 class _RecipesState extends State<Recipes> {
-  Future<ApiModel> recipeModel;
+  Future<List<ApiModel>> recipeModel;
 
   @override
   void initState() {
@@ -30,16 +30,17 @@ class _RecipesState extends State<Recipes> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: FutureBuilder<ApiModel>(
+        child: FutureBuilder<List<ApiModel>>(
           future: recipeModel,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return ListView.builder(
-                  itemCount: 1,
+                  itemCount: snapshot.data.length,
                   itemBuilder: (context, index) {
+                    var item = snapshot.data[index];
                     return Container(
                       height: 100,
-                      child: Image.network(snapshot.data.image),
+                      child: Image.network(item.image),
                     );
                   });
             } else if (snapshot.hasError) {

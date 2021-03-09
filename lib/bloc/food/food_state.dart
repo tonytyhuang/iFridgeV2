@@ -1,26 +1,20 @@
 part of 'food_bloc.dart';
 
 @immutable
-abstract class FoodState extends Equatable {}
+class FoodState extends Equatable {
+  final List<Food> foodList;
+  final String error;
 
-class FoodInitial extends FoodState {
-  @override
-  List<Object> get props => [];
-}
+  FoodState({this.foodList, this.error});
 
-class FoodAdded extends FoodState {
-  final String foodId;
-
-  FoodAdded(this.foodId);
-  @override
-  List<Object> get props => [foodId];
-}
-
-class FoodError extends FoodState {
-  final String message;
-
-  FoodError(this.message);
+  factory FoodState.initial() {
+    return FoodState(foodList: null, error: null);
+  }
+  FoodState copyWith({List<Food> foodList, String error}) {
+    return FoodState(
+        foodList: foodList ?? this.foodList, error: error ?? this.error);
+  }
 
   @override
-  List<Object> get props => [message];
+  List<Object> get props => [foodList];
 }

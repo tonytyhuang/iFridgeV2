@@ -5,15 +5,6 @@ abstract class FoodEvent extends Equatable {
   const FoodEvent();
 }
 
-class GetInitialFood extends FoodEvent {
-  final int limit;
-
-  GetInitialFood(this.limit);
-
-  @override
-  List<Object> get props => [limit];
-}
-
 class AddFood extends FoodEvent {
   final Food food;
 
@@ -21,4 +12,11 @@ class AddFood extends FoodEvent {
 
   @override
   List<Object> get props => [food];
+}
+
+class LoadFood extends FoodEvent {
+  final int limit;
+  LoadFood(this.limit);
+  @override
+  List<Object> get props => [limit];
 }

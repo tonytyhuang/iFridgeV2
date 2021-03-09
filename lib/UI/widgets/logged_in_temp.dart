@@ -165,11 +165,16 @@ class LoggedInWidgetTemp extends StatelessWidget {
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 18),
                                 ),
-                                Text(
-                                  'All Recipes >',
-                                  style: TextStyle(
-                                      color: Colors.grey, fontSize: 13),
-                                )
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).pushNamed('/recipe');
+                                  },
+                                  child: Text(
+                                    'All Recipes >',
+                                    style: TextStyle(
+                                        color: Colors.grey, fontSize: 13),
+                                  ),
+                                ),
                               ],
                             ),
                           ),

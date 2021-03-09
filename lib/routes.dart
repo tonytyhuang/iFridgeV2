@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ifridgev2/UI/FoodList/FoodList.dart';
 import 'package:ifridgev2/UI/screens/login.dart';
 import 'package:ifridgev2/UI/screens/navbar.dart';
+import 'package:ifridgev2/UI/screens/recipes.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -14,6 +15,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => FoodListPage());
       case '/home':
         return MaterialPageRoute(builder: (_) => NavBar());
+      case '/recipe':
+        return MaterialPageRoute(builder: (_) => Recipes());
     }
   }
 }

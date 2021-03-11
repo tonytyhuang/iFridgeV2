@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:ifridgev2/UI/FoodList/FoodList.dart';
 import 'package:ifridgev2/UI/screens/login.dart';
 import 'package:ifridgev2/UI/screens/navbar.dart';
-import 'package:ifridgev2/UI/screens/recipes.dart';
+import 'package:ifridgev2/UI/RecipesPage/Recipes.dart';
+import 'package:ifridgev2/UI/RecipesPage/widgets/RecipeCard.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -16,7 +17,12 @@ class RouteGenerator {
       case '/home':
         return MaterialPageRoute(builder: (_) => NavBar());
       case '/recipe':
-        return MaterialPageRoute(builder: (_) => Recipes());
+        Map args = settings.arguments;
+        return MaterialPageRoute(
+          builder: (_) => RecipeCard(
+            id: args['itemID'],
+          ),
+        );
     }
   }
 }

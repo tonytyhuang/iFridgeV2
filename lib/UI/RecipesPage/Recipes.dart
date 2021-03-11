@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:ifridgev2/UI/RecipesPage/widgets/RecipeCard.dart';
 import 'package:ifridgev2/api/api_manager.dart';
-import 'package:ifridgev2/api/api_model.dart';
+import 'package:ifridgev2/api/models/recipe_model.dart';
 
 class Recipes extends StatefulWidget {
   @override
@@ -9,7 +10,7 @@ class Recipes extends StatefulWidget {
 }
 
 class _RecipesState extends State<Recipes> {
-  Future<List<ApiModel>> recipeModel;
+  Future<List<RecipeModel>> recipeModel;
 
   @override
   void initState() {
@@ -17,20 +18,11 @@ class _RecipesState extends State<Recipes> {
     recipeModel = ApiManager().getIngredients();
   }
 
-  // Future<String> getData() async {
-  //   http.Response response = await http.get(
-  //       Uri.encodeFull(
-  //           "https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=10&apiKey=f4fd5002222b4e9eb0f35956381904f0"),
-  //       headers: {"Accept": "application/json"});
-
-  //   print(response.body);
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: FutureBuilder<List<ApiModel>>(
+        child: FutureBuilder<List<RecipeModel>>(
           future: recipeModel,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
@@ -42,7 +34,10 @@ class _RecipesState extends State<Recipes> {
                     height: 133,
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pushNamed('/home');
+                        Navigator.pushNamed(context, '/recipe', arguments: {
+                          'itemID': item.id,
+                        });
+                        // Navigator.of(context).pushNamed('/home');
                       },
                       child: Card(
                         child: Row(

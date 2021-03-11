@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:ifridgev2/UI/RecipesPage/widgets/RecipeCard.dart';
 import 'package:ifridgev2/api/api_manager.dart';
 import 'package:ifridgev2/api/models/recipe_model.dart';
 
@@ -15,6 +13,7 @@ class _RecipesState extends State<Recipes> {
   @override
   void initState() {
     super.initState();
+    // call the api to get the recipes
     recipeModel = ApiManager().getIngredients();
   }
 
@@ -25,19 +24,32 @@ class _RecipesState extends State<Recipes> {
         child: FutureBuilder<List<RecipeModel>>(
           future: recipeModel,
           builder: (context, snapshot) {
+            // Check whether the api has made the call or not
             if (snapshot.hasData) {
+              // Building each recipe as a list
               return ListView.builder(
                 itemCount: snapshot.data.length,
                 itemBuilder: (context, index) {
                   var item = snapshot.data[index];
+                  List<String> ingredients = [];
+                  for (int i = 0; i < item.missedIngredientCount; ++i) {
+                    ingredients.add(item.missedIngredients[i].original);
+                  }
+                  for (int i = 0; i < item.usedIngredientCount; ++i) {
+                    ingredients.add(item.usedIngredients[i].original);
+                  }
+                  for (int i = 0; i < item.unusedIngredients.length; ++i) {
+                    ingredients.add(item.unusedIngredients[i].original);
+                  }
                   return Container(
                     height: 133,
                     child: GestureDetector(
                       onTap: () {
                         Navigator.pushNamed(context, '/recipe', arguments: {
                           'itemID': item.id,
+                          'itemName': item.title,
+                          'itemIngredients': ingredients,
                         });
-                        // Navigator.of(context).pushNamed('/home');
                       },
                       child: Card(
                         child: Row(
@@ -105,15 +117,16 @@ class _RecipesState extends State<Recipes> {
                             )
                           ],
                         ),
-                        // child: Image.network(item.image),
                       ),
                     ),
                   );
                 },
               );
+              // Check if error occured when api was called
             } else if (snapshot.hasError) {
               return Text("${snapshot.error}");
             }
+            // Returns loading spinner when waiting for api call
             return Center(
               child: CircularProgressIndicator(),
             );

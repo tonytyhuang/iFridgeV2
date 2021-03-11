@@ -21,6 +21,8 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => RecipeCard(
             id: args['itemID'],
+            name: args['itemName'],
+            ingredients: args['itemIngredients'],
           ),
         );
     }

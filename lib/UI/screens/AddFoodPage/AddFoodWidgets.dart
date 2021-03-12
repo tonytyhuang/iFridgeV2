@@ -3,13 +3,12 @@ import 'package:flutter/services.dart';
 
 class FoodRow extends StatelessWidget {
   Widget build(BuildContext context) {
-    double twidth = MediaQuery.of(context).size.width;
 
     return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Container(
-            width: twidth * 0.6,
+          Expanded(
+            flex: 50,
             child:
             TextFormField(
               decoration: const InputDecoration(
@@ -23,11 +22,13 @@ class FoodRow extends StatelessWidget {
               },
             ),
           ),
-          SizedBox(
-            width: twidth * 0.1,
+          Expanded(
+            flex: 5,
+            child: SizedBox()
           ),
-          Container(
-              width: twidth * 0.2,
+          Expanded(
+            flex: 25,
+            child: Container(
               child:
               TextFormField(
                 decoration: const InputDecoration(
@@ -44,7 +45,9 @@ class FoodRow extends StatelessWidget {
                   FilteringTextInputFormatter.digitsOnly
                 ],
               )
+            )
           )
+
         ]
     );
   }

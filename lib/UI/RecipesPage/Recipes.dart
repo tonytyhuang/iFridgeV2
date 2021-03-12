@@ -38,9 +38,6 @@ class _RecipesState extends State<Recipes> {
                   for (int i = 0; i < item.usedIngredientCount; ++i) {
                     ingredients.add(item.usedIngredients[i].original);
                   }
-                  for (int i = 0; i < item.unusedIngredients.length; ++i) {
-                    ingredients.add(item.unusedIngredients[i].original);
-                  }
                   return Container(
                     height: 133,
                     child: GestureDetector(
@@ -82,7 +79,6 @@ class _RecipesState extends State<Recipes> {
                                       ),
                                     ),
                                   ),
-                                  //Spacer(),
                                   Padding(
                                     padding: EdgeInsets.only(
                                         top: 5, bottom: 0, left: 15, right: 15),
@@ -97,7 +93,7 @@ class _RecipesState extends State<Recipes> {
                                     padding: EdgeInsets.only(
                                         top: 5, bottom: 0, left: 15, right: 15),
                                     child: Text(
-                                      'Unused Ingredients: ' +
+                                      'Missed Ingredients: ' +
                                           item.missedIngredientCount.toString(),
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 10),

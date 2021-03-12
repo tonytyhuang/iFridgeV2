@@ -7,6 +7,8 @@ abstract class IFoodDatabase {
   Future<List<Food>> getFoodList({int limit});
 
   Future<String> addFood({Food food});
+
+  Future<List<String>> getIngredient();
 }
 
 class FoodDatabaseService implements IFoodDatabase {
@@ -61,5 +63,24 @@ class FoodDatabaseService implements IFoodDatabase {
       print(e);
     }
     return '';
+  }
+
+  @override
+  Future<List<String>> getIngredient() async {
+    String fakeId = "Tonydoodoo";
+    try {
+      List<String> itemList = [];
+      QuerySnapshot querySnapshot =
+          await foodCollection.where("user_id", isEqualTo: fakeId).get();
+      if (querySnapshot.docs.length > 0) {
+        querySnapshot.docs.forEach((element) {
+          itemList.add(element["name"]);
+        });
+      }
+      return itemList;
+    } catch (e) {
+      print(e);
+    }
+    return null;
   }
 }

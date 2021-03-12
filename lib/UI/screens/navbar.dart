@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ifridgev2/UI/screens/AddFoodPage/AddFoodPage.dart';
 import 'package:ifridgev2/UI/screens/homescreen.dart';
 import 'package:ifridgev2/UI/screens/profile.dart';
+import 'package:ifridgev2/UI/RecipesPage/Recipes.dart';
 
 class NavBar extends StatefulWidget {
   @override
@@ -14,6 +15,8 @@ class NavBarState extends State<NavBar> {
   final tabs = [
     HomeScreen(),
     Center(child: Text('Cart')),
+    Center(child: Text('Add')),
+    Recipes(),
     AddFoodPage(),
     Center(child: Text('Recipes')),
     Profile(),

@@ -18,7 +18,7 @@ class _RecipeCardState extends State<RecipeCard> {
   @override
   void initState() {
     super.initState();
-    recipe = ApiManager().getRecipe();
+    recipe = ApiManager().getRecipe(widget.id);
   }
 
   @override
@@ -132,7 +132,7 @@ class _RecipeCardState extends State<RecipeCard> {
                             ),
                           ),
                           Flexible(
-                            fit: FlexFit.loose,
+                            // fit: FlexFit.loose,
                             child: Padding(
                               padding:
                                   EdgeInsets.only(left: 30, top: 10, right: 10),

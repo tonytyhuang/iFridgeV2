@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:ifridgev2/api/models/recipe_model.dart';
 import 'package:ifridgev2/api/api_urls.dart';
@@ -16,7 +17,7 @@ class ApiManager {
     List<String> food = await foodDatabaseService.getIngredient();
     String foodString = '';
     food.forEach((element) {
-      foodString = foodString + element + ',+';
+      foodString += element + ',+';
     });
     foodString = foodString.substring(0, foodString.length - 2);
     String finalString =
@@ -33,15 +34,21 @@ class ApiManager {
     return recipesModel;
   }
 
-  Future<RecipeInstructionModel> getRecipe() async {
+  Future<RecipeInstructionModel> getRecipe(int id) async {
     var client = http.Client();
     var recipe;
 
-    final response = await client.get(Url.recipeUrl);
+    final response = await client.get(Url.recipeUrl(id));
     if (response.statusCode == 200) {
       var jsonBody = response.body;
       var jsonMap = json.decode(jsonBody);
-      recipe = RecipeInstructionModel.fromJson(jsonMap[0]);
+      if (!jsonMap.isEmpty) {
+        recipe = RecipeInstructionModel.fromJson(jsonMap[0]);
+      } else {
+        var jsonMock = '{ "steps": [] }';
+        var jsonMapMock = json.decode(jsonMock);
+        recipe = RecipeInstructionModel.fromJson(jsonMapMock);
+      }
     } else {
       return recipe;
     }

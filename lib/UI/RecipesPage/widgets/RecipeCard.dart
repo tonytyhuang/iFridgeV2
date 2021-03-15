@@ -175,6 +175,10 @@ class _RecipeCardState extends State<RecipeCard> {
                               ),
                             ),
                           ),
+                          Padding(
+                            padding: EdgeInsets.only(bottom: 20),
+                            child: Container(),
+                          ),
                         ],
                       ),
                     ),

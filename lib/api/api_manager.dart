@@ -43,8 +43,13 @@ class ApiManager {
     if (response.statusCode == 200) {
       var jsonBody = response.body;
       var jsonMap = json.decode(jsonBody);
+      var len = jsonMap.length;
       if (!jsonMap.isEmpty) {
-        recipe = RecipeInstructionModel.fromJson(jsonMap[0]);
+        if (len > 1) {
+          recipe = RecipeInstructionModel.fromJson(jsonMap[1]);
+        } else {
+          recipe = RecipeInstructionModel.fromJson(jsonMap[0]);
+        }
       } else {
         var jsonMock = '{ "steps": [] }';
         var jsonMapMock = json.decode(jsonMock);

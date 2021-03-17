@@ -12,18 +12,19 @@ class ApiManager {
   Future<List<RecipeModel>> getIngredients() async {
     var client = http.Client();
     var recipesModel;
-    FoodDatabaseService foodDatabaseService = FoodDatabaseService();
-    // Going to substitute for getting all food items of that user
-    List<String> food = await foodDatabaseService.getIngredient();
-    String foodString = '';
-    food.forEach((element) {
-      foodString += element + ',+';
-    });
-    foodString = foodString.substring(0, foodString.length - 2);
-    String finalString =
-        'https://api.spoonacular.com/recipes/findByIngredients?ingredients=' +
-            foodString +
-            '&number=10&apiKey=f4fd5002222b4e9eb0f35956381904f0';
+    // FoodDatabaseService foodDatabaseService = FoodDatabaseService();
+    // // Going to substitute for getting all food items of that user
+    // List<String> food = await foodDatabaseService.getIngredient();
+    // String foodString = '';
+    // food.forEach((element) {
+    //   foodString += element + ',+';
+    // });
+    // foodString = foodString.substring(0, foodString.length - 2);
+    // String finalString =
+    //     'https://api.spoonacular.com/recipes/findByIngredients?ingredients=' +
+    //         foodString +
+    //         '&number=10&apiKey=f4fd5002222b4e9eb0f35956381904f0';
+    String finalString = await Url.getRecipes();
     final response = await client.get(finalString);
     if (response.statusCode == 200) {
       var jsonBody = response.body;

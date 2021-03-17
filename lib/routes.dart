@@ -23,6 +23,7 @@ class RouteGenerator {
             id: args['itemID'],
             name: args['itemName'],
             ingredients: args['itemIngredients'],
+            item: args['item'],
           ),
         );
     }

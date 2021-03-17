@@ -46,6 +46,7 @@ class _RecipesState extends State<Recipes> {
                           'itemID': item.id,
                           'itemName': item.title,
                           'itemIngredients': ingredients,
+                          'item': item,
                         });
                       },
                       child: Card(

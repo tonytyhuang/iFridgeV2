@@ -29,7 +29,7 @@ class ShoppingListBloc extends Bloc<ShoppingListEvent, ShoppingListState> {
 
 Stream<ShoppingListState> _mapAddItemEventToState(
     AddItem event,
-    ItemState state,
+    ShoppingListState state,
     Future<String> Function({ShoppingListItem shoppingItem}) addItem) async* {
   try {
     await addItem(shoppingItem: event.shoppingItem);
@@ -46,7 +46,7 @@ Stream<ShoppingListState> _mapAddItemEventToState(
 
 Stream<ShoppingListState> _mapLoadItemEventToState(
     LoadItem event,
-    ItemState state,
+    ShoppingListState state,
     Future<List<ShoppingListItem>> Function() getShoppingList) async* {
   try {
     List<ShoppingListItem> shoppingList = await getShoppingList();

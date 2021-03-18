@@ -1,10 +1,8 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:ifridgev2/api/models/recipe_model.dart';
 import 'package:ifridgev2/api/api_urls.dart';
-import 'package:ifridgev2/repository/food_database.dart';
 
 import 'models/recipe_instruction_model.dart';
 

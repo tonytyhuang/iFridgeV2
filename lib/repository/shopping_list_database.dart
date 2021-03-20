@@ -8,7 +8,7 @@ abstract class IShoppingListDatabase {
 
 class ShoppingListDatabaseService implements IShoppingListDatabase {
   final CollectionReference shoppingListCollection =
-      FirebaseFirestore.instance.collection('shopping');
+      FirebaseFirestore.instance.collection('shopping_list');
 
   @override
   Future<List<ShoppingListItem>> getShoppingList() async {

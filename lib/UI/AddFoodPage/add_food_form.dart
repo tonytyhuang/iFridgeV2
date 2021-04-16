@@ -61,15 +61,15 @@ class _AddFoodFormState extends State<AddFoodForm> {
               },
             ),
             FlatButton(
-                onPressed: () {
-                  Food food = Food(
-                      name: name,
-                      quantity: quantity,
-                      expiryDate: Timestamp.fromDate(DateTime.now()),
-                      category: category);
-                  BlocProvider.of<FoodBloc>(context)..add(AddFood(food));
-                },
-                child: Text('submit'))
+              onPressed: () {
+                Food food = Food(
+                    name: name,
+                    quantity: quantity,
+                    expiryDate: Timestamp.fromDate(DateTime.now()),
+                    category: category);
+                BlocProvider.of<FoodBloc>(context)..add(AddFood(food));
+              },
+              child: Text('submit'))
           ],
         ));
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ifridgev2/UI/Camera/camera_page.dart';
 import 'package:ifridgev2/UI/ShoppingListPage/ShoppingListPage.dart';
 //import 'package:ifridgev2/UI/AddFoodPage/add_food_page.dart';
 import 'package:ifridgev2/UI/screens/AddFoodPage/AddFoodPage.dart';
@@ -16,7 +17,7 @@ class NavBarState extends State<NavBar> {
   final tabs = [
     HomeScreen(),
     ShoppingList(),
-    Center(child: Text('Add')),
+    CameraPage(),
     Recipes(),
     AddFoodPage(),
     Center(child: Text('Recipes')),

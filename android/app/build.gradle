@@ -78,6 +78,7 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     implementation platform('com.google.firebase:firebase-bom:26.2.0')
     implementation 'com.google.firebase:firebase-analytics'
+    api 'com.google.firebase:firebase-ml-vision-image-label-model:20.0.2'
 }
 
 apply plugin: 'com.google.gms.google-services'

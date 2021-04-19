@@ -40,6 +40,9 @@ dependencies:
   rxdart: 0.20.0
   # Google icon for sign in
   font_awesome_flutter: ^8.11.0
+  # For object detection
+  firebase_ml_vision: ^0.11.0
+  image_picker: ^0.6.7+22
 
 dev_dependencies:
   flutter_test:

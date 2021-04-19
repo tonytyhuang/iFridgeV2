@@ -19,6 +19,7 @@ class NavBarState extends State<NavBar> {
     ShoppingList(),
     CameraPage(),
     Recipes(),
+    Center(child: Text('Cart')),
     AddFoodPage(),
     Center(child: Text('Recipes')),
     Profile(),

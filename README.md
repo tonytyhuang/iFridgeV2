@@ -1,6 +1,10 @@
-# ifridgev2
+# iFridge
 
-A new Flutter project.
+A Flutter application that helps with shopping and grocery management. Features include:
+* Groceries list with expiry dates
+* Shopping list
+* Object detection for food
+* Recipes list
 
 ## Getting Started
 

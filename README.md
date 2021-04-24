@@ -33,6 +33,26 @@ To get the APK, run
 flutter build apk
 ```
 
+## Setting up the environment 
+
+Do these steps if you are planning to use your own firebase.
+1. Go to console.firebase.com
+2. Click on your project
+3. Go to settings - general 
+4. Scroll to the "Your apps" section and download the `google-services.json` from the Android app 
+and the `GoogleService-info.plist` from the iOS app. Save these for later.
+
+### Android Configuration 
+
+1. In the `android/app` folder, place the `google-services.json` from step 4. 
+
+
+### iOS Configuration 
+
+1. In Xcode, open the `ios/Runner.xcodeproj` project. 
+2. In the root `Runner` project. 
+3. Drag the `GoogleService-info.plist` from step 4. above into this folder. 
+
 For help getting started with Flutter, view
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.

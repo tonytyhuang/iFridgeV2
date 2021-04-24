@@ -6,8 +6,8 @@ A Flutter application that helps with shopping and grocery management. Features 
 * Object detection for food
 * Recipes list
 
-##Feature Showcase
-###Grocery list
+## Feature Showcase
+### Grocery list
 
 ## Getting Started
 
